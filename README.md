@@ -3,18 +3,18 @@ Parses response of Google Speech API and consolidates texts in a simple text fil
 
 Usage of this tool is very nominal. It is here to quickly walk you through Google Speech API.
 
-### Pre-requisite
+## Pre-requisite
 
 1. Google Speech API:
  
-    This is just for quick reference on how to use Google Speech API - trigger a request and get response.
-    For details follow Google's documentation. At a glance you may follow next few sections.
+    Following few sections briefs on how to use Google Speech API - trigger a request and get response.
+    For details follow Google's documentation.
 
 2. Java 1.8
 
 3. Maven
 
-#### Set up Google Cloud Account & follow steps to use Speech API
+### Set up Google Cloud Account & follow steps to use Speech API
 1. https://cloud.google.com/
 
    Create an account using your Gmail and setup payment.
@@ -29,8 +29,12 @@ Usage of this tool is very nominal. It is here to quickly walk you through Googl
 3. Follow step by step guild from How-to https://cloud.google.com/speech/docs/how-to.
 
     In the how-to guide, the first is authentication. Go through "Using a service account" section.
+    
+### Convert the audio file in supported format
+
+Todo
  
-#### Google cloud storage
+### Google cloud storage
 
 Ref: https://console.cloud.google.com/storage/browser
 
@@ -38,23 +42,23 @@ Ref: https://console.cloud.google.com/storage/browser
 
 2. Upload the file audio file into the bucket    
      
-#### Request and response
+### Request and response
 
 I used Postman (https://www.getpostman.com/) to make following API calls.
 
-##### access_token
+#### access_token
 
 Get access_token using 'gcloud' tool. 
 
 Ref: https://cloud.google.com/sdk/
 
-##### Authorization
+#### Authorization
     Bearer Token: <access_token>​
 
-##### Headers
+#### Headers
     Content-Type: application/json
 
-##### Request for speech api to create transcript for the audio file previously uploaded into the cloud storage
+#### Request for speech api to create transcript for the audio file previously uploaded into the cloud storage
 
 Make the following request to trigger a long running Speech API on your audio file. 
 
@@ -80,7 +84,7 @@ Note:
 2. Note down the value of "name" from the response to the above request.
 
 
-##### Request to get the transcript
+#### Request to get the transcript
 
 After the above request has been submitted it could be while before it completes.
 
@@ -96,7 +100,7 @@ Note:
 2. Copy the response in a json file say transcript.json. To be used in the tool next.
 
 
-### Usage of this tool
+## Usage of this tool
 Once the conversion if complete, the above request will return the transcript in a json format. Use this tool to create 
 a consolidated text file from the json response.
 
