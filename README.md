@@ -33,7 +33,7 @@ you through Google Speech API setup & usage.
     
 ### Convert the audio file in supported format
 
-1. Download the static build: https://ffmpeg.zeranoe.com/builds/ & add /pth/to/ffmpeg/bin to PATH.
+1. Download the static build: https://ffmpeg.zeranoe.com/builds/ & add /path/to/ffmpeg/bin to PATH.
 
 2. Speech API supports these https://cloud.google.com/speech/docs/basics#audio-encodings. You may use ffmpeg tool
    to convert your audio file to desired format, iff required. 
