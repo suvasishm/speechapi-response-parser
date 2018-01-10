@@ -1,7 +1,8 @@
 # speechapi-response-parser
 Parses response of Google Speech API and consolidates texts in a simple text file.
 
-Usage of this tool is very nominal. It is here to quickly walk you through Google Speech API.
+Usage of this tool is very nominal and described in the last section. First few sections here quickly walk 
+you through Google Speech API setup & usage.
 
 ## Pre-requisite
 
@@ -12,7 +13,7 @@ Usage of this tool is very nominal. It is here to quickly walk you through Googl
 
 2. Java 1.8
 
-3. Maven
+3. Maven 3+
 
 ### Set up Google Cloud Account & follow steps to use Speech API
 1. https://cloud.google.com/
@@ -32,7 +33,10 @@ Usage of this tool is very nominal. It is here to quickly walk you through Googl
     
 ### Convert the audio file in supported format
 
-Todo
+1. Download the static build: https://ffmpeg.zeranoe.com/builds/ & add /pth/to/ffmpeg/bin to PATH.
+
+2. Speech API supports these https://cloud.google.com/speech/docs/basics#audio-encodings. You may use ffmpeg tool
+   to convert your audio file to desired format, iff required. 
  
 ### Google cloud storage
 
@@ -40,7 +44,7 @@ Ref: https://console.cloud.google.com/storage/browser
 
 1. Create a bucket into Google cloud storage
 
-2. Upload the file audio file into the bucket    
+2. Upload the audio file (converted if required) into the bucket    
      
 ### Request and response
 
@@ -74,13 +78,13 @@ Request parameters:
             "languageCode": "en-US"
         },
         "audio": {
-            "uri": "gs://<bucket_name>/<file>.flac"
+            "uri": "gs://bucket_name/object_name"
         }
     }
 
 Note:
 
-1. The field values could be different as per your requirement 
+1. The field values could be different as per your requirement. Ref. https://cloud.google.com/speech/reference/rest/v1/RecognitionConfig.
 2. Note down the value of "name" from the response to the above request.
 
 
