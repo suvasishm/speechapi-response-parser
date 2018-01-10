@@ -100,7 +100,7 @@ Request:
     
 Note: 
 
-1. Replace <name> with value received after the first API call.
+1. Replace \<name> with value received after the first API call.
 2. Copy the response in a json file say transcript.json. To be used in the tool next.
 
 
